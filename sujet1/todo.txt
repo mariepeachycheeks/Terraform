@@ -1,0 +1,15 @@
+A FAIRE
+OK -> EC2 ne plus utiliser file mais templatefile pour les variables dans le fichier
+Une fois création EC2 OK -> Créer le launchtemplate et auto scaling group
+
+Faire pareil pour prod app front
+changer ami pour que ca se recupere dynamiquement amazon linux 2023 en fonction de la région (data)
+
+
+
+Objectif final : Ca doit marcher
+
+Bonus :
+
+resource "aws_s3_object" "back" se modifie toujours a chaque apply, le corriger -- j'ai corrigé ne changant bucket-prefix to bucket
+Faire en sorte de mettre les tags de provider.tf dans l'auto scaling group

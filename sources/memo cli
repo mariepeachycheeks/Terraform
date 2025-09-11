@@ -1,0 +1,21 @@
+mysql -h prod-app-db.cluster-crt5ccn9zbwj.eu-west-3.rds.amazonaws.com -u admin -p
+prod-app-db.cluster-crt5ccn9zbwj.eu-west-3.rds.amazonaws.com
+mysql -h prod-app-db.cluster-crt5ccn9zbwj.eu-west-3.rds.amazonaws.com -u admin -p
+
+CREATE DATABASE innovatech;
+USE innovatech;
+CREATE TABLE status (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  status VARCHAR(50) NOT NULL
+);
+INSERT INTO status (status) VALUES ('ok');
+
+
+mysqldump -h prod-app-db.cluster-crt5ccn9zbwj.eu-west-3.rds.amazonaws.com -u admin -p innovatech > innovatech.sql 
+
+mysql -h prod-app-db.cluster-crt5ccn9zbwj.eu-west-3.rds.amazonaws.com -u admin -p innovatech < innovatech.sql
+
+./back --db-host prod-app-db.cluster-crt5ccn9zbwj.eu-west-3.rds.amazonaws.com -p 80
+
+Mariia :
+aws s3 cp s3://prod-app-front-assets20250801110916125400000001/innovatech.sql - | mysql -h prod-app-1.crt5ccn9zbwj.eu-west-3.rds.amazonaws.com -u admin -p innovatech
