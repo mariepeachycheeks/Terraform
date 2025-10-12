@@ -1,0 +1,143 @@
+/* Общие стили и сброс отступов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Neue', cursive;
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    color: #4a4a4a;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Стили для заголовка */
+header {
+    background-color: #ffb7d5; /* Милый розовый */
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 5px dotted #ff85b3;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ff4d94;
+    margin-bottom: 0.5rem;
+}
+
+.paw {
+    font-size: 2.7rem;
+    display: inline-block;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #7851a9;
+    font-style: italic;
+}
+
+/* Стили для основного контента */
+main {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.hero-image {
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #7851a9;
+}
+
+.container > p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+}
+
+/* Стили для карточек с фичами */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 280px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border: 3px solid #ffb7d5;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.feature-card h3 {
+    color: #ff4d94;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Стили для подвала */
+footer {
+    background-color: #7851a9;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+.heart {
+    color: #ff4d94;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
